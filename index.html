@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Play cookie clicker!">
+    <title>Cookie Clicker</title>
+    <link href="style.css">
+    <script src="script.lua"/>
+</head>
+
+<body>
+    <p>This game is best played in fullscreen!</p>
+    <p>Bugs are to be expected, have fun!</p>
+
+    <div class="render">
+        <div class="sidebar">
+            <div class="stats">
+                <p class="stats-farmers">Cookie Farmers: 0</p>
+                <p class="stats-click">Cookies per click: 1</p>
+                <p class="stats-multiplier">Cookies Multiplier: 1</p>
+            </div>
+
+            <div class="upgrades">
+                <div class="upgrade" class="cookie-farmer-upgrade">
+                    <p class="upgrade-title" class="cookie-farmer-lbl">Cookie Farmer (+1 Cookies)</p>
+                    <button class="purchase-button" class="cookie-farmer-upgrade-btn">[   Purchase    ]</button>
+                </div>
+
+                <div class="upgrade" class="more-cookie-upgrade">
+                    <p class="upgrade-title">+1 Cookie per click</p>
+                    <button class="purchase-button">[   Purchase   ]</button>
+                </div>
+
+                <div class="upgrade" class="more-cookie-upgrade">
+                    <p class="upgrade-title">+1 Multiplier</p>
+                    <button class="purchase-button">[   Purchase   ]</button>
+                </div>
+            </div>
+        </div> 
+
+        <div class="game">
+            <p class="cookie-display">0</p>
+            <img class="clicker-icon" src="http://localhost:3000/cookie.png">
+            <button class="clicker">Click</button>    
+        </div>   
+    </div>
+</body>
+
+</html>
