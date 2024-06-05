@@ -1,5 +1,5 @@
 -- game values
-local score = 999
+local score = 0
 local multiplier = 1
 local cookiesPerClick = 1
 

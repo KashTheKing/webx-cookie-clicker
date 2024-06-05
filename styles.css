@@ -1,0 +1,106 @@
+render {
+    align-items: center;
+    direction: row;
+    gap: 250px;
+}
+
+game {
+    padding: 10px;
+    align-items: center;
+    direction: column;
+    gap: 100px;
+}
+
+sidebar {
+    padding: 50px;
+    margin-bottom: 400px;
+    direction: row;
+    gap: 100px;
+}
+
+upgrades {
+    align-items: center;
+    margin-bottom: 200px;
+    direction: column;
+    gap: 50px;
+}
+
+stats {
+    margin-left: 50px;
+    direction: column;
+    gap: 50px;
+}
+
+cookie-display {
+    text-align: center;
+    font-size: 35px;
+    border-color: #616161;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+clicker {
+    font-size: 25px;
+    border-color: #616161;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+upgrade {
+    direction: column;
+    gap: 15px;
+}
+
+upgrade-title {
+    font-size: 14px;
+    padding: 10px;
+}
+
+purchase-button {
+    font-size: 14px;
+    border-color: #616161;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+stat {
+    width: 200px;
+    font-size: 14px;
+    border-color: #616161;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+data {
+    align-items: center;
+    direction: column;
+    gap: 15px;
+    border-color: #616161;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+data-buttons {
+    gap: 5px;
+    border-color: #616161;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 12px;
+    padding: 10px;
+    direction: row;
+    align-items: center;
+}
+
+vertical-layout {
+    direction: column;
+}
