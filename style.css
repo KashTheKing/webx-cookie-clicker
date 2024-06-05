@@ -12,6 +12,7 @@ game {
 }
 
 sidebar {
+    padding: 50px;
     margin-bottom: 400px;
     direction: row;
     gap: 100px;
@@ -50,5 +51,24 @@ upgrade-title {
 
 purchase-button {
     font-size: 14px;
-    stroke: solid black 2px;
+}
+
+stat {
+    width: 100px;
+    font-size: 10px;
+}
+
+data {
+    align-items: center;
+    direction: column;
+    gap: 15px;
+}
+
+data-buttons {
+    align-items: center;
+    gap: 5px;
+}
+
+vertical-layout {
+    direction: column;
 }

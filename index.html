@@ -12,38 +12,52 @@
 <body>
     <p>This game is best played in fullscreen!</p>
     <p>Bugs are to be expected, have fun!</p>
+    <button class="toggleFlashing">Turn Off Flashing</button>
 
-    <div class="render">
-        <div class="sidebar">
-            <div class="stats">
-                <p class="stats-farmers">Cookie Farmers: 0</p>
-                <p class="stats-click">Cookies per click: 1</p>
-                <p class="stats-multiplier">Cookies Multiplier: 1</p>
+    <div class="vertical-layout">
+        <div class="render">
+            <div class="sidebar">
+                <div class="stats">
+                    <p class="stat" class="stats-farmers">Cookie Farmers: 0</p>
+                    <p class="stat" class="stats-click">Cookies per click: 1</p>
+                    <p class="stat" class="stats-multiplier">Cookies Multiplier: 1</p>
+                </div>
+
+                <div class="upgrades">
+                    <div class="upgrade" class="cookie-farmer-upgrade">
+                        <p class="upgrade-title" class="cookie-farmer-lbl">Cookie Farmer (+1 Cookies)</p>
+                        <button class="purchase-button" class="cookie-farmer-upgrade-btn">[   Purchase    ]</button>
+                    </div>
+
+                    <div class="upgrade" class="more-cookie-upgrade">
+                        <p class="upgrade-title" class="more-cookie-upgrade-lbl">+1 Cookie per click</p>
+                        <button class="purchase-button" class="more-cookie-upgrade-btn">[   Purchase   ]</button>
+                    </div>
+
+                    <div class="upgrade" class="multiplier-upgrade">
+                        <p class="upgrade-title" class="multiplier-upgrade-lbl">+1 Multiplier</p>
+                        <button class="purchase-button" class="multiplier-upgrade-btn">[   Purchase   ]</button>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="game">
+                <p class="cookie-display">0</p>
+                <img class="clicker-icon" src="https://cdn.discordapp.com/attachments/907306705090646066/1247801909717504012/cookie.png?ex=66615996&is=66600816&hm=0082fd292c36f23427a42af5c930adef738f57b8c9e61666619bfce73f481b0c&">
+                <button class="clicker">Click</button>    
+            </div>   
+        </div>
+
+        <!--<div class="data">
+            <p>Want to save your data?</p>
+            <input placeholder="Username"></input>
+            <input placeholder="Password"></input>
+            <div class="data-buttons">
+                <button>Login</button>
+                <button>Register</button>    
             </div>
-
-            <div class="upgrades">
-                <div class="upgrade" class="cookie-farmer-upgrade">
-                    <p class="upgrade-title" class="cookie-farmer-lbl">Cookie Farmer (+1 Cookies)</p>
-                    <button class="purchase-button" class="cookie-farmer-upgrade-btn">[   Purchase    ]</button>
-                </div>
-
-                <div class="upgrade" class="more-cookie-upgrade">
-                    <p class="upgrade-title">+1 Cookie per click</p>
-                    <button class="purchase-button">[   Purchase   ]</button>
-                </div>
-
-                <div class="upgrade" class="more-cookie-upgrade">
-                    <p class="upgrade-title">+1 Multiplier</p>
-                    <button class="purchase-button">[   Purchase   ]</button>
-                </div>
-            </div>
-        </div> 
-
-        <div class="game">
-            <p class="cookie-display">0</p>
-            <img class="clicker-icon" src="http://localhost:3000/cookie.png">
-            <button class="clicker">Click</button>    
-        </div>   
+            <p>Server Response</p>
+        </div>-->
     </div>
 </body>
 
