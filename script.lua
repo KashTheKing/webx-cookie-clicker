@@ -8,11 +8,25 @@ local clicker = get("clicker")
 local cookieDisplay = get("cookie-display")
 local clickerIcon = get("clicker-icon")
 
+-- data
+local dataPage = get("data")
+local username = get("username")
+local password = get("password")
+local loginBtn = get("login")
+local registerBtn = get("register")
+local serverResponse = get("server-response")
+
+-- cheats
+local adminPassword = get("admin")
+
+local cheatInput = get("cheat")
+cheatInput.set_visible(false)
+
 -- farmer upgrade
 local cookieFarmerBtn = get("cookie-farmer-upgrade-btn")
 local cookieFarmerLbl = get("cookie-farmer-lbl")
 
-local farmers = {} :: {thread}
+local farmers = 0
 
 -- more cookie upgrade
 local moreCookieBtn = get("more-cookie-upgrade-btn")
@@ -43,6 +57,7 @@ local toggleFlashing = get("toggleFlashing")
 
 -- settings
 local flashingEnabled = true
+local adminUnlocked = false
 
 -- icons
 local COOKIE_ICON = "https://cdn.discordapp.com/attachments/907306705090646066/1247801909717504012/cookie.png?ex=66615996&is=66600816&hm=0082fd292c36f23427a42af5c930adef738f57b8c9e61666619bfce73f481b0c&"
@@ -60,7 +75,7 @@ local function splashEffect(element: HtmlElement): Timeout
 end
 
 local function updateCosts()
-    farmerCost = (table.maxn(farmers)) * 100 +  BASE_FARMER_COST
+    farmerCost = farmers * 100 +  BASE_FARMER_COST
     multiplierCost = multiplier^10 * BASE_MULTIPLIER_COST
     clickCost = BASE_CLICK_COST * cookiesPerClick
     displayUpgrades()
@@ -68,19 +83,16 @@ local function updateCosts()
 end
 
 local function farmerLoop()
-    click()
-
-    set_timeout(farmerLoop, FARMER_DELAY)
-    --print("Looped")
+    if farmers > 0 then
+        for i=1, farmers do
+            click()
+        end
+    end
+    set_timeout(farmerLoop, 1000)
 end
 
 local function addFarmer()
-    local thread = coroutine.create(farmerLoop)
-    coroutine.resume(thread)
-
-    table.insert(farmers, thread)
-
-    return thread
+    farmers += 1
 end
 
 local function separateThousands(number)
@@ -110,7 +122,7 @@ function displayUpgrades()
 end
 
 function displayStats()
-    farmerStats.set_content(`Cookie Farmers: {table.maxn(farmers)}`)
+    farmerStats.set_content(`Cookie Farmers: {farmers}`)
     clickStats.set_content(`Cookies per click: {cookiesPerClick}`)
     multiplierStats.set_content(`Cookies Multiplier: {multiplier}`)
 end
@@ -177,6 +189,53 @@ toggleFlashing.on_click(function()
     end
 end)
 
+cheatInput.on_input(function()
+    local amount = tonumber(cheatInput.get_content())
+    if type(amount) == 'number' then
+        score = amount
+        display()
+    end
+end)
+
+adminPassword.on_input(function()
+    if not adminUnlocked then
+        if adminPassword.get_content() == 'admin' then
+            adminPassword.set_content("Success!")
+            adminUnlocked = true
+            cheatInput.set_visible(true)
+            
+            set_timeout(function()
+                adminPassword.set_visible(false)
+            end, 1000)
+        end
+    end
+end)
+
+local function dataRequest(requestType, user, pass)
+    local options = {
+
+    }
+
+    local success, result = pcall(fetch, options)
+
+    if success then
+        
+    else
+        
+    end
+end
+
+local function dataRegister()
+    
+end
+
+local function dataLogin()
+    
+end
+
+registerBtn.on_click(dataRegister)
+loginBtn.on_click(dataLogin)
+
 print(window.link)
 
 function render()
@@ -184,5 +243,7 @@ function render()
     displayUpgrades()
     displayStats()
 end
+
+farmerLoop()
 
 render()
