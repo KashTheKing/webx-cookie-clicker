@@ -225,6 +225,8 @@ local function dataRequest(requestType, user, pass)
     end
 end
 
+dataPage.set_visible(false)
+
 local function dataRegister()
     
 end
